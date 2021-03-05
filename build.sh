@@ -4,15 +4,16 @@
 qmgit=QmZKfXZc3rwVrAnqybccQtqpY8gjzfUa7puWiJZYRaxpvv
 qmrepo=QmRScW4ZhiMPYJsLZevNHHC7HmdY3fZFmMPoV1oZRxHz2V
 qm=Qmc223eTNPHJa7TfeY7R7ArrBFsbnqqZLdehRbL2SXhH5D
+pgw_url=https://ipfs.blockring™.ml
 
 tic=$(date +%s)
-curl -m 3 -sL https://gateway.ipfs.io/api/v0/ls?arg=$qmrepo &
+#curl -m 3 -sL https://gateway.ipfs.io/api/v0/ls?arg=$qmrepo &
+curl -sIL $pgw_url/ipfs/$qmgit/info/refs &
 
 git cat-file -p master^{tree}
 git rev-parse HEAD:
 git log -1
 
-curl -iL https://ipfs.blockring™.ml/ipfs/$qmgit/info/refs | grep -i -v access &
 git pull --no-rebase https://ipfs.blockring™.ml/ipfs/$qmrepo/default.site.git
 
 git cat-file -p master^{tree}

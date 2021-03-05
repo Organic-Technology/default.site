@@ -2,6 +2,7 @@
 <title>:website</title>
 <link href=style.css rel=stylesheet>
 <link href=favicon.ico rel=icon>
+<script src="mutables.js"></script>
 <div><div id=wrapper class="">
 <img src=img/cube.png id=logo align=right>
 <p>This <a href=":origin">:website</a> site is part of the <a href="https://kintm.gq/">KiNetwork</a>;
@@ -15,6 +16,9 @@ Please proceed to the site: <a href="//:www">:www</a>
 </div>
 <p class="footnote">Dr I&#183;T, your <i><b>To~Go~To Public~Coder</b></i>: <a href="https://www.drit.ml/">www.drit.ml</a>
 </div>
+<footer>
+<small>GIT <a href="https://ipfs.blockring™.ml/ipfs/:qmgit">repository</a> <a href=http://127.0.0.1:8080/ipfs/:qmrepo>ipfs:/:qmrepo</a> ~ :tic</small>
+</footer>
 <script>
  console.log(document.location);
  let host = document.location.host;
@@ -44,7 +48,10 @@ Please proceed to the site: <a href="//:www">:www</a>
  body.innerHTML = body.innerHTML.replace(/:origin/g,origin);
  body.innerHTML = body.innerHTML.replace(/:hostname/g,hostname);
  body.innerHTML = body.innerHTML.replace(/:host/g,host); // /!\ order is important ;)
- body.innerHTML = body.innerHTML.replace(/:www/g,www); // /!\ order is important ;)
+ body.innerHTML = body.innerHTML.replace(/:www/g,www);
+ body.innerHTML = body.innerHTML.replace(/:tic/g,data.tic);
+ body.innerHTML = body.innerHTML.replace(/:qmgit/g,data.qmgit);
+ body.innerHTML = body.innerHTML.replace(/:qmrepo/g,data.qmrepo);
 
 
 </script>

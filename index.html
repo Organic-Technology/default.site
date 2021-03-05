@@ -1,0 +1,51 @@
+<meta charset=utf8>
+<title>:website</title>
+<link href=style.css rel=stylesheet>
+<link href=favicon.ico rel=icon>
+<div><div id=wrapper class="">
+<img src=img/cube.png id=logo align=right>
+<p>This <a href=":origin">:website</a> site is part of the <a href="https://kintm.gq/">KiNetwork</a>;
+
+it is a <a href=https://google.com/search?q=Dr+I%B7T+hostless+sites>hostless site</a> and therefore is best viewed on the
+<a href=https://blockringtm.ml/>IPFS network</a>.
+
+<p>
+Please proceed to the site: <a href="//:www">:www</a>
+
+</div>
+<p class="footnote">Dr I&#183;T, your <i><b>To~Go~To Public~Coder</b></i>: <a href="https://www.drit.ml/">www.drit.ml</a>
+</div>
+<script>
+ console.log(document.location);
+ let host = document.location.host;
+ let hostname = document.location.hostname;
+ let domain = hostname
+ let website = domain.charAt(0).toUpperCase() + domain.slice(1); // Capitalize string
+     website = website.replace(/[-\.]/g,' ');
+ let www; // canonical name
+ if (! hostname.match(/^(?:127|www)/) ) {
+   www = 'www.' + host
+ } else {
+   www = host
+ }
+ console.debug('www:',www);
+ let title = document.getElementsByTagName('title')[0]
+ title.innerText = title.innerText.replace(':website',website);
+
+ var body = document.getElementsByTagName('body')[0];
+ if (typeof(body.template) == 'undefined') {
+  body.template = {}
+ }
+ if (typeof(body.template.content) == 'undefined') {
+  body.template.content = body.innerHTML;
+ }
+ body.innerHTML = body.template.content.replace(/:website/g,website);
+ body.innerHTML = body.innerHTML.replace(/:domain/g,domain);
+ body.innerHTML = body.innerHTML.replace(/:origin/g,origin);
+ body.innerHTML = body.innerHTML.replace(/:hostname/g,hostname);
+ body.innerHTML = body.innerHTML.replace(/:host/g,host); // /!\ order is important ;)
+ body.innerHTML = body.innerHTML.replace(/:www/g,www); // /!\ order is important ;)
+
+
+</script>
+

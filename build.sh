@@ -24,7 +24,7 @@ sed \
     -e "s/qmrepo: .*/qmrepo: '$qmrepo',/" \
     -e "s/qm: .*/qm: '$qm',/" \
     -e "s/tic: [0-9]*/tic: $tic/" \
-    mutables.tmpl > mutables.js
+    mutables.txt > mutables.js
 
 git status
 

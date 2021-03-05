@@ -20,6 +20,7 @@ git rev-parse HEAD:
 git log -1
 # note: tic must be last (no ,)
 sed \
+    -e "s/qmgit: .*/qmgit: '$qmrepo',/" \
     -e "s/qmrepo: .*/qmrepo: '$qmrepo',/" \
     -e "s/qm: .*/qm: '$qm',/" \
     -e "s/tic: [0-9]*/tic: $tic/" \

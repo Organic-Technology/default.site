@@ -18,7 +18,12 @@ git pull --no-rebase https://ipfs.blockring™.ml/ipfs/$qmrepo/default.site.git
 git cat-file -p master^{tree}
 git rev-parse HEAD:
 git log -1
-sed -s "s/tic: .*/tic: $tic/" mutables.tmpl > mutables.js
+# note: tic must be last (no ,)
+sed \
+    -e "s/qmrepo: .*/qmrepo: '$qmrepo',/" \
+    -e "s/qm: .*/qm: '$qm',/" \
+    -e "s/tic: .*/tic: '$tic'/" \
+    mutables.tmpl > mutables.js
 
 git status
 

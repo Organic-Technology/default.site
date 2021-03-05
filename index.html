@@ -1,5 +1,5 @@
 <meta charset=utf8>
-<title>:website</title>
+<title>:website ~ :gitid</title>
 <link href=style.css rel=stylesheet>
 <link href=favicon.ico rel=icon>
 <script src="mutables.js"></script>
@@ -36,6 +36,7 @@ Please proceed to the site: <a href="//:www">:www</a>
  console.debug('www:',www);
  let title = document.getElementsByTagName('title')[0]
  title.innerText = title.innerText.replace(':website',website);
+ title.innerText = title.innerText.replace(':gitid',data.gitid);
 
  var body = document.getElementsByTagName('body')[0];
  if (typeof(body.template) == 'undefined') {

@@ -12,15 +12,16 @@ curl -sIL $pgw_url/ipfs/$qmgit/info/refs &
 
 git cat-file -p master^{tree}
 git rev-parse HEAD:
-git log -1
 
 git pull --no-rebase https://ipfs.blockring™.ml/ipfs/$qmrepo/default.site.git
 
 git cat-file -p master^{tree}
 git rev-parse HEAD:
 git log -1
+gitid=$(git rev-parse --short HEAD)
 # note: tic must be last (no ,)
 sed \
+    -e "s/gitid: .*/gitid: '$gitid',/" \
     -e "s/qmgit: .*/qmgit: '$qmrepo',/" \
     -e "s/qmrepo: .*/qmrepo: '$qmrepo',/" \
     -e "s/qm: .*/qm: '$qm',/" \

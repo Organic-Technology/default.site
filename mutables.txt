@@ -1,4 +1,5 @@
 window.data = {
+gitid: 'CommitHash',
 qm: 'QmSite',
 qmgit: 'QmGit',
 qmrepo: 'QmRepo',

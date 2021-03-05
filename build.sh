@@ -12,7 +12,7 @@ git cat-file -p master^{tree}
 git rev-parse HEAD:
 git log -1
 
-curl -iL https://ipfs.blockring™.ml/ipfs/$qmgit/info/refs &
+curl -iL https://ipfs.blockring™.ml/ipfs/$qmgit/info/refs | grep -i -v access &
 git pull --no-rebase https://ipfs.blockring™.ml/ipfs/$qmrepo/default.site.git
 
 git cat-file -p master^{tree}

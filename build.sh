@@ -1,9 +1,9 @@
 # 
 
 # note these are commited Qms so they are immutable ones i.e. not current one
-qmgit=QmYAWBZBVvY9jHvk4v5FvEinLXGHFEXMVUd1FJQSKAtXD9
-qmrepo=QmPf7fiocTkqEoznyDq8Jmpzj1V7BXLNtAiQAgMqTgibJG
-qm=QmXBzhWQ3URLbYUi49JPQC5PXBJBvkJ1WyeiyD6wVyNgkH
+qmgit=QmXhiZfDzhcVCwvwq9DFBz5KaxrSxdXemJSApiZj5M54NN
+qmrepo=QmV5mbp6eEvdaZTJqFAytFLobqadX6tLVNrXY3m4fXvxHr
+qm=QmR8TiBM8L86PXs3bkUMUrBfYeNUFoTXFD5aRNwn6Ho4Ur
 
 tic=$(date +%s)
 curl -m 3 -sL https://gateway.ipfs.io/api/v0/ls?arg=$qmrepo &
@@ -22,7 +22,7 @@ git log -1
 sed \
     -e "s/qmrepo: .*/qmrepo: '$qmrepo',/" \
     -e "s/qm: .*/qm: '$qm',/" \
-    -e "s/tic: .*/tic: '$tic'/" \
+    -e "s/tic: [0-9]*/tic: $tic/" \
     mutables.tmpl > mutables.js
 
 git status
